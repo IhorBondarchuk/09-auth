@@ -1,0 +1,1 @@
+export const TAGS = ["Todo", "Work", "Personal", "Meeting", "Shopping"] as const;
