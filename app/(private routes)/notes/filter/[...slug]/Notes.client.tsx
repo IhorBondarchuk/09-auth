@@ -3,7 +3,7 @@
 import NoteList from "@/components/NoteList/NoteList";
 import Pagination from "@/components/Pagination/Pagination";
 import SearchBox from "@/components/SearchBox/SearchBox";
-import { fetchNotes, NotesHttpResponse } from "@/lib/api";
+import { fetchNotes, NotesHttpResponse } from "@/lib/api/clientApi";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { Toaster } from "react-hot-toast";

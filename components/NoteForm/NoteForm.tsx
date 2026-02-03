@@ -4,10 +4,11 @@ import React, { useId } from "react";
 import type { CreateNote } from "@/types/note";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { createNote } from "@/lib/api";
+
 import { TAGS } from "@/constants/tags";
 import { useRouter } from "next/navigation";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
+import { createNote } from "@/lib/api/clientApi";
 
 export default function NoteForm() {
   const fieldId = useId();
@@ -118,7 +119,9 @@ export default function NoteForm() {
           type="submit"
           className={css.submitButton}
           disabled={
-            creationM.isPending || (draft?.title?.length ?? 0) < 3 || !draft?.content
+            creationM.isPending ||
+            (draft?.title?.length ?? 0) < 3 ||
+            !draft?.content
           }
           aria-busy={creationM.isPending}
         >
