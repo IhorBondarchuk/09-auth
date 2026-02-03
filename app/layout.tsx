@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "NoteHub - Manage Your Notes",
     description:
       "A modern note-taking application to organize your thoughts and tasks",
-    url: "https://08-zustand-hazel-zeta.vercel.app",
+    url: "https://09-auth-gold-sigma.vercel.app/profile",
     images: [
       {
         url: "/notehub-og-meta.jpg",
