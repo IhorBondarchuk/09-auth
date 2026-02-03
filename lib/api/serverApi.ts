@@ -53,6 +53,16 @@ export const checkSession = async () => {
   return response.data;
 };
 
+export const checkSessionWithResponse = async () => {
+  const cookieStore = await cookies();
+
+  return nextServer.get<CheckSessionRequest>("auth/session", {
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
+  });
+};
+
 export const getMe = async () => {
   const cookieStore = await cookies();
 
