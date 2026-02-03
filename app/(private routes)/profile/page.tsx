@@ -12,13 +12,13 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: `Profile: ${username}`,
       description: `Email: ${email}`,
-      url: `http://localhost:3000`,
+      url: `https://09-auth-gold-sigma.vercel.app/profile`,
       images: [
         {
-          url: `${avatar}`,
+          url: avatar?.trim() || "/avatar-default.svg",
           width: 1200,
           height: 630,
-          alt: "Poster with logo",
+          alt: "User avatar",
         },
       ],
     },
@@ -39,7 +39,7 @@ export default async function Profile() {
         </div>
         <div className={css.avatarWrapper}>
           <Image
-            src={avatar || "/avatar-default.svg"}
+            src={avatar?.trim() || "/avatar-default.svg"}
             alt="User Avatar"
             width={120}
             height={120}
