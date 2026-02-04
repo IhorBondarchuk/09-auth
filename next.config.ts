@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "notehub-api.goit.study",
+        hostname: "ac.goit.global",
         pathname: "/**",
       },
     ],
