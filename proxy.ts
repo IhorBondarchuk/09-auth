@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { checkSessionWithResponse } from "./lib/api/serverApi";
 import { parse } from "cookie";
 
-const privateRoutes = ["/profile", "/notes/filter/all"];
+const privateRoutes = ["/profile", "/notes"];
 const publicRoutes = ["/sign-in", "/sign-up"];
 
 export async function proxy(request: NextRequest) {
@@ -69,8 +69,15 @@ export async function proxy(request: NextRequest) {
   if (isPrivateRoute) {
     return NextResponse.next();
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/profile/:path*", "/sign-in", "/sign-up"],
+  matcher: [
+    "/profile/:path*",
+    "/notes/:path*",
+    "/sign-in",
+    "/sign-up",
+  ],
 };
