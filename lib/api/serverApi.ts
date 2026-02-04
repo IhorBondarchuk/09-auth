@@ -45,17 +45,6 @@ export const fetchNoteById = async (id: Note["id"]): Promise<Note> => {
 export const checkSession = async () => {
   const cookieStore = await cookies();
 
-  const response = await nextServer.get<CheckSessionRequest>("auth/session", {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-  });
-  return response.data;
-};
-
-export const checkSessionWithResponse = async () => {
-  const cookieStore = await cookies();
-
   return nextServer.get<CheckSessionRequest>("auth/session", {
     headers: {
       Cookie: cookieStore.toString(),
